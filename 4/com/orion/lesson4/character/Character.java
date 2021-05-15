@@ -1,4 +1,4 @@
-package com.orion.lesson4;
+package com.orion.lesson4.character;
 
 import java.util.Random;
 
@@ -8,7 +8,7 @@ abstract public class Character {
     private int hitPoint;
     Random rand = new Random();
 
-    public Character(String name, int hitPoint) {
+    public Character(String name) {
         this.name = name;
         this.hitPoint = hitPoint;
     }

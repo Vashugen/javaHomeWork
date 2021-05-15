@@ -1,4 +1,4 @@
-package com.orion.lesson4;
+package com.orion.lesson4.character;
 
 import com.orion.lesson4.spell.Spell;
 
@@ -10,8 +10,9 @@ public class Mage extends Character {
     private static final int MAX_SPELL_COUNT = 10;
     private List<Spell> spellBook;
 
-    public Mage(String name, int hitPoint) {
-        super(name, hitPoint);
+    public Mage(String name) {
+        super();
+        this.setName("Маг №" + name);
         this.spellBook = this.generateSpellBook(SPELL_COUNT);
     }
 
@@ -32,7 +33,7 @@ public class Mage extends Character {
         for (int i = 1; i <= spellCount; i++) {
             do{
                 int spellNumber = rand.nextInt(MAX_SPELL_COUNT);
-            }
+            }while (1 != 2);
 
 
         }

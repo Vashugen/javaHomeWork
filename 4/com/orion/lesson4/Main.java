@@ -19,12 +19,24 @@ public class Main {
 
     public static void showMenu() {
         System.out.println("Menu:" +
-                " 1. Press 1 to start the game." +
-                " 2. Press 0 to quit the game. ");
+                " 1. Нажмите 1, чтобы начать игру." +
+                " 2. Нажмите 0 для выхода. ");
     }
 
     //TODO to Class Game
     public static void startTheGame(){
+        //Game game = new Game();
+
+        int characterCount = 10;
+
+        //dowhile
+        System.out.println("Введите количество магов (1-10): ");
+        int mageCount = in.nextInt();
+
+        System.out.println("Введите количество монстров от 1 до : " + (characterCount - mageCount));
+        int monsterCount = in.nextInt();
+
+        Scene scene = new Scene(mageCount, monsterCount);
 
     }
 

@@ -1,4 +1,4 @@
-package com.orion.lesson4;
+package com.orion.lesson4.character;
 
 public class Monster extends Character {
 
