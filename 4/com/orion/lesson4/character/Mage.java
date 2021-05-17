@@ -31,15 +31,13 @@ public class Mage extends Charm {
 
     private void generateSpellBook() {
 
+        ArrayList<SpellCollection> spells = new ArrayList<>(SpellCollection.values());
         Random rand = new Random();
         int spellCount = rand.nextInt();
 
-        for (int i = 0; i <= MAX_SPELL_COUNT; i++) {
-            do {
-                spellCount = rand.nextInt(SpellCollection.values().length - 1);
-            }while (spellBook.indexOf(SpellCollection.values()[spellCount].action()) != -1);
-
-            spellBook.add(SpellCollection.values()[spellCount].action());
+        while (spells.size() > 0 && spellBook.size() <= MAX_SPELL_COUNT) {
+            spellCount = spells.isEmpty() ? 0 : rand.nextInt(spells.size() - 1);
+            spellBook.add(spells.remove(spellCount).action());
         }
     }
 
