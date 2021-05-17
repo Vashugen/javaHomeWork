@@ -3,9 +3,10 @@ package com.orion.lesson4.character;
 public class Monster extends Character {
 
     private static final int DAMAGE = 5;
+    private static final int HITPOINT = 8;
 
-    public Monster(String name, int hitPoint) {
-        super(name, hitPoint);
+    public Monster(String name) {
+        super(name, HITPOINT);
     }
 
     public void getDamage(int damage){

@@ -8,7 +8,7 @@ abstract public class Character {
     private int hitPoint;
     Random rand = new Random();
 
-    public Character(String name) {
+    public Character(String name, int hitPoint) {
         this.name = name;
         this.hitPoint = hitPoint;
     }

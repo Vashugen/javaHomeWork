@@ -1,3 +1,4 @@
+/*
 package com.orion.lesson4.spell;
 
 public class Healing extends Spell{
@@ -12,3 +13,4 @@ public class Healing extends Spell{
 
     }
 }
+*/
