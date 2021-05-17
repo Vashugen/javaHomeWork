@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Game {
 
+    //TODO Модификаторы
+    public static Scanner in = new Scanner(System.in);
+
     public static void startTheGame(){
 
         System.out.println("Введите количество магов (1-10): ");

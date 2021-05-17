@@ -2,13 +2,12 @@ package com.orion.lesson4.character;
 
 import java.util.Random;
 
-abstract public class Character {
+abstract public class Charm {
 
     private String name;
     private int hitPoint;
-    Random rand = new Random();
 
-    public Character(String name, int hitPoint) {
+    public Charm(String name, int hitPoint) {
         this.name = name;
         this.hitPoint = hitPoint;
     }
@@ -31,7 +30,7 @@ abstract public class Character {
 
     public abstract void getDamage(int damage);
 
-    public abstract int damage(Character target);
+    public abstract int damage(Charm target);
 
     public abstract boolean isDead();
 

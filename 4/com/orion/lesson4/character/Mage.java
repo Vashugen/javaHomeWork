@@ -1,26 +1,26 @@
 package com.orion.lesson4.character;
 
 import com.orion.lesson4.spell.Spell;
+import com.orion.lesson4.spell.SpellCollection;
 
-import java.util.List;
+import java.util.*;
 
-public class Mage extends Character {
+public class Mage extends Charm {
 
-    private static final int SPELL_COUNT = 3;
-    private static final int MAX_SPELL_COUNT = 10;
+    private static final int MAX_SPELL_COUNT = 2;
     private static final int HITPOINT = 4;
-    private List<Spell> spellBook;
+    private ArrayList<Spell> spellBook = new ArrayList<>();
 
     public Mage(String name) {
-        super(name, HITPOINT);
-        //this.spellBook = this.generateSpellBook(SPELL_COUNT);
+        super("Маг №" + name, HITPOINT);
+        generateSpellBook();
     }
 
     public void getDamage(int damage) {
 
     }
 
-    public int damage(Character target) {
+    public int damage(Charm target) {
         //spell
         return 1;
     }
@@ -29,15 +29,18 @@ public class Mage extends Character {
         return false;
     }
 
-/*    private List generateSpellBook(int spellCount) {
-        for (int i = 1; i <= spellCount; i++) {
-            do{
-                int spellNumber = rand.nextInt(MAX_SPELL_COUNT);
-            }while (1 != 2);
+    private void generateSpellBook() {
 
+        Random rand = new Random();
+        int spellCount = rand.nextInt();
 
+        for (int i = 0; i <= MAX_SPELL_COUNT; i++) {
+            do {
+                spellCount = rand.nextInt(SpellCollection.values().length - 1);
+            }while (spellBook.indexOf(SpellCollection.values()[spellCount].action()) != -1);
+
+            spellBook.add(SpellCollection.values()[spellCount].action());
         }
-    }*/
-
+    }
 
 }

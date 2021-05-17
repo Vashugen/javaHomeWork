@@ -30,9 +30,12 @@ public class Main {
         do {
             showMenu();
             int choice = in.nextInt();
+            if(choice == 1){
+                Game.startTheGame();
+            }
             switch (choice) {
-                case 1 -> Game.startTheGame();
-                case 0 -> end = true;
+                //case 1 -> Game.startTheGame();
+                //case 0 -> end = true;
             }
 
         }while (!end);

@@ -1,11 +1,13 @@
-/*
 package com.orion.lesson4.spell;
 
 public class Healing extends Spell{
 
-    public Spell(String name, int damage) {
-        super(name, damage);
-        this.setNumberInSpellBook(1);
+
+    public static int DAMAGE = -7;
+
+    public Healing(String name) {
+        super(name, DAMAGE);
+        //this.setNumberInSpellBook(1);
     }
 
     @Override
@@ -13,4 +15,3 @@ public class Healing extends Spell{
 
     }
 }
-*/
