@@ -9,17 +9,9 @@ public class Monster extends Charm {
         super("Монстр №" + name, HITPOINT);
     }
 
-    public void getDamage(int damage){
+    public int setDamage() {
 
-        if(this.isDead()){
-
-        }
-
-    }
-
-    public int damage(Charm target){
-
-/*        int damage = rand.nextInt(DAMAGE);
+        /*        int damage = rand.nextInt(DAMAGE);
 
         System.out.println("Монстр" + this.getName() + " атакует " + target.getName() + " на " + damage + " единиц " +
                 "урона");
@@ -29,11 +21,11 @@ public class Monster extends Charm {
 
     }
 
-    public boolean isDead(){
-        if(true){
-
-        }
-        return false;
+    public void getDamage(int damage) {
+        //return getDamage();
     }
 
+    public boolean isDead(int damage) {
+        return (this.getHitPoint() - damage) > 0;
+    }
 }

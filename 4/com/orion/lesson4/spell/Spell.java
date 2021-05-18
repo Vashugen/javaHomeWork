@@ -3,9 +3,8 @@ package com.orion.lesson4.spell;
 abstract public class Spell {
 
     //TODO type - заклинания могут быть не только на демаги - action вместо getDamage
-    public String name;
-    public int damage;
-    private int numberInSpellBook;
+    private String name;
+    private int damage;
 
     public Spell(String name, int damage) {
         this.name = name;
@@ -26,14 +25,6 @@ abstract public class Spell {
 
     public int getDamage() {
         return damage;
-    }
-
-    public int getNumberInSpellBook() {
-        return numberInSpellBook;
-    }
-
-    public void setNumberInSpellBook(int numberInSpellBook) {
-        this.numberInSpellBook = numberInSpellBook;
     }
 
     abstract public void cast();

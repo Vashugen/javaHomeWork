@@ -11,16 +11,16 @@ import java.util.Random;
 public class Scene {
 
     final static int SCENE_SIZE = 10;
-    public Charm[] scene = new Charm[SCENE_SIZE];
+    public Charm[] charms = new Charm[SCENE_SIZE];
 
     public Scene(int mageCount, int monsterCount) {
 
         for (int i = 1; i <= mageCount; i++) {
-            scene[getFreePoint()] = new Mage(String.valueOf(i));
+            charms[getFreePoint()] = new Mage(String.valueOf(i));
         }
 
         for (int i = 1; i <= monsterCount; i++) {
-            scene[getFreePoint()] = new Monster(String.valueOf(i));
+            charms[getFreePoint()] = new Monster(String.valueOf(i));
         }
 
     }
@@ -30,7 +30,7 @@ public class Scene {
         Random rand = new Random();
         int freePoint = rand.nextInt(SCENE_SIZE - 1);
 
-        while (scene[freePoint] != null){
+        while (charms[freePoint] != null){
             freePoint = rand.nextInt(SCENE_SIZE - 1);
         }
 

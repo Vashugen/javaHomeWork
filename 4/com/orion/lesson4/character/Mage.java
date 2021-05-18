@@ -16,27 +16,29 @@ public class Mage extends Charm {
         generateSpellBook();
     }
 
-    public void getDamage(int damage) {
-
-    }
-
-    public int damage(Charm target) {
-        //spell
+    public int setDamage() {
+        //return (() spellBook.indexOf(rand.nextInt(MAX_SPELL_COUNT)))
         return 1;
+
     }
 
-    public boolean isDead() {
-        return false;
+    public void getDamage(int damage) {
+        //return getDamage();
+    }
+
+    public boolean isDead(int damage) {
+        return (this.getHitPoint() - damage) > 0;
     }
 
     private void generateSpellBook() {
 
-        ArrayList<SpellCollection> spells = new ArrayList<>(SpellCollection.values());
+        ArrayList<SpellCollection> spells = new ArrayList<SpellCollection>(Arrays.asList(SpellCollection.values()));
         Random rand = new Random();
-        int spellCount = rand.nextInt();
+        int spellCount;
 
         while (spells.size() > 0 && spellBook.size() <= MAX_SPELL_COUNT) {
-            spellCount = spells.isEmpty() ? 0 : rand.nextInt(spells.size() - 1);
+            //WHY not -1
+            spellCount = spells.isEmpty() ? 0 : rand.nextInt(spells.size());
             spellBook.add(spells.remove(spellCount).action());
         }
     }

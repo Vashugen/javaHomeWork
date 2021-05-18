@@ -6,6 +6,7 @@ abstract public class Charm {
 
     private String name;
     private int hitPoint;
+    private int position;
 
     public Charm(String name, int hitPoint) {
         this.name = name;
@@ -28,9 +29,11 @@ abstract public class Charm {
         this.hitPoint = hitPoint;
     }
 
-    public abstract void getDamage(int damage);
+    public abstract boolean isDead(int damage);
 
-    public abstract int damage(Charm target);
+    public abstract int setDamage();
+
+    public abstract void getDamage(int damage);
 
     public abstract boolean isDead();
 

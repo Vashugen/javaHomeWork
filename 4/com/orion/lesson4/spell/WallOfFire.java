@@ -1,10 +1,10 @@
 package com.orion.lesson4.spell;
 
-public class Healing extends Spell{
+public class WallOfFire extends Spell{
 
-    private static int DAMAGE = -7;
+    private static int DAMAGE = 15;
 
-    public Healing(String name) {
+    public WallOfFire(String name) {
         super(name, DAMAGE);
     }
 
