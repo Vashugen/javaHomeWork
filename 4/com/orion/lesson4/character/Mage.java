@@ -16,14 +16,13 @@ public class Mage extends Charm {
         generateSpellBook();
     }
 
-    public int setDamage() {
-        //return (() spellBook.indexOf(rand.nextInt(MAX_SPELL_COUNT)))
-        return 1;
+    public void setDamage(int damage) {
+        this.setHitPoint(damage);
 
     }
 
-    public void getDamage(int damage) {
-        //return getDamage();
+    public void getDamage(Charm[] targets) {
+
     }
 
     public boolean isDead(int damage) {

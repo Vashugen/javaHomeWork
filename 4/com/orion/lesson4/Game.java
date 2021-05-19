@@ -10,6 +10,7 @@ public class Game {
     public static Scanner in = new Scanner(System.in);
     public static Scene scene;
 
+
     public static void startTheGame(){
 
         System.out.println("Введите количество магов (1-10): ");
@@ -24,21 +25,23 @@ public class Game {
             for (int i = 0; i < scene.SCENE_SIZE; i++){
 
                 if(scene.charms[i] != null){
-                    makeAMove(scene.charms[i]);
+                    makeAMove(scene.charms[i], i);
                 }
             }
         }
 
     }
 
-    private static void makeAMove(Charm charm){
-        int a = 1;
+    private static void makeAMove(Charm charm, int position){
+        charm.getDamage(scene.charms);
         //charm.damage(getTarget());
     }
 
-    private static Charm getTarget(){
+    /*private static Charm getTarget(){
         int a = 1;
-    }
+
+        return
+    }*/
 
     private static boolean isFinished(){
 

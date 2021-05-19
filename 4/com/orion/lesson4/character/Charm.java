@@ -4,9 +4,10 @@ import java.util.Random;
 
 abstract public class Charm {
 
+    public Random rand = new Random();
+
     private String name;
     private int hitPoint;
-    private int position;
 
     public Charm(String name, int hitPoint) {
         this.name = name;
@@ -31,11 +32,9 @@ abstract public class Charm {
 
     public abstract boolean isDead(int damage);
 
-    public abstract int setDamage();
+    public abstract void setDamage(int damage);
 
-    public abstract void getDamage(int damage);
-
-    public abstract boolean isDead();
+    public abstract void getDamage(Charm[] targets);
 
 
 }
