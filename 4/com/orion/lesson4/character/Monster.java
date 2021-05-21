@@ -25,6 +25,7 @@ public class Monster extends Charm {
                     System.out.println("Монстр" + this.getName() + " атакует " + target.getName() + " на " + damage + " единиц " +
                             "урона");
                     target.setDamage(damage);
+                    break;
                 }
             }
         }
