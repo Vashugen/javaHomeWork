@@ -29,7 +29,6 @@ public class Game {
                     scene.charms[i].action(scene.charms);
                 }
             }
-
             scene.clear();
         }
     }

@@ -34,10 +34,6 @@ public class Mage extends Charm {
 
     }
 
-    public boolean isDead(int damage) {
-        return (this.getHitPoint() - damage) > 0;
-    }
-
     private void generateSpellBook() {
 
         ArrayList<SpellCollection> spells = new ArrayList<SpellCollection>(Arrays.asList(SpellCollection.values()));

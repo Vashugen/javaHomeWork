@@ -30,8 +30,6 @@ abstract public class Charm {
         this.hitPoint = hitPoint;
     }
 
-    public abstract boolean isDead(int damage);
-
     public abstract void setDamage(int damage);
 
     public abstract void action(Charm[] targets);

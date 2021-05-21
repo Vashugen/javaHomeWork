@@ -4,10 +4,7 @@ import com.orion.lesson4.character.Charm;
 import com.orion.lesson4.character.Mage;
 import com.orion.lesson4.character.Monster;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Scene {
 
@@ -28,6 +25,10 @@ public class Scene {
 
     public void clear(){
 
+        int nullElements = Collections.frequency(Arrays.asList(scene.charms), null);
+        return (scene.SCENE_SIZE - nullElements) == 1;
+
+        //TODO лямбда
         for (Charm item: charms) {
             if(item.getHitPoint() <= 0){
                 item = null;

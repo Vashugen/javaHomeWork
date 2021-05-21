@@ -30,8 +30,4 @@ public class Monster extends Charm {
             }
         }
     }
-
-    public boolean isDead(int damage) {
-        return (this.getHitPoint() - damage) > 0;
-    }
 }

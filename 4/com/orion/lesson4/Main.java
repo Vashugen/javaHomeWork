@@ -16,9 +16,9 @@ public class Main {
     }
 
     public static void showMenu() {
-        System.out.println("Menu:" +
-                " 1. Нажмите 1 для старта." +
-                " 2. Нажмите 0 для выхода. ");
+        System.out.println("Menu: \n" +
+                " 1. Нажмите 1 для старта.\n" +
+                " 2. Нажмите 0 для выхода.");
     }
 
     public static void main(String[] args) {
