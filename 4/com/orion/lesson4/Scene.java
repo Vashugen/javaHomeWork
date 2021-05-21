@@ -25,15 +25,22 @@ public class Scene {
 
     public void clear(){
 
-        int nullElements = Collections.frequency(Arrays.asList(scene.charms), null);
-        return (scene.SCENE_SIZE - nullElements) == 1;
+        /*int nullElements = Collections.frequency(Arrays.asList(scene.charms), null);
+        return (scene.SCENE_SIZE - nullElements) == 1;*/
 
-        //TODO лямбда
-        for (Charm item: charms) {
-            if(item.getHitPoint() <= 0){
-                item = null;
+
+        for (int i = 0; i < SCENE_SIZE; i++) {
+            if(charms[i] != null && charms[i].getHitPoint() <= 0){
+                charms[i] = null;
             }
         }
+
+   /*     //TODO лямбда
+        for (Charm item: charms) {
+            if(item != null && item.getHitPoint() <= 0){
+                item = null;
+            }
+        }*/
     }
 
     private int getFreePoint(){

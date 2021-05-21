@@ -22,7 +22,7 @@ public class Monster extends Charm {
 
             for (Charm target: targets) {
                 if(target != null && !this.equals(target)){
-                    System.out.println("Монстр" + this.getName() + " атакует " + target.getName() + " на " + damage + " единиц " +
+                    System.out.println(this.getName() + " атакует " + target.getName() + " на " + damage + " единиц " +
                             "урона");
                     target.setDamage(damage);
                     break;

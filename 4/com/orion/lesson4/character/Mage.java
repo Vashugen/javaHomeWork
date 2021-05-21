@@ -27,7 +27,7 @@ public class Mage extends Charm {
         if(this.getHitPoint() > 0){
 
             Spell spell = getRandomSpell();
-            System.out.println("Маг " + this .getName() +  " читает заклинание " + spell.getName());
+            System.out.println(this .getName() +  " читает заклинание " + spell.getName());
 
             spell.cast(this, targets);
         }
