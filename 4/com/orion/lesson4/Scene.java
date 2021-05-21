@@ -5,6 +5,7 @@ import com.orion.lesson4.character.Mage;
 import com.orion.lesson4.character.Monster;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -23,6 +24,15 @@ public class Scene {
             charms[getFreePoint()] = new Monster(String.valueOf(i));
         }
 
+    }
+
+    public void clear(){
+
+        for (Charm item: charms) {
+            if(item.getHitPoint() <= 0){
+                item = null;
+            }
+        }
     }
 
     private int getFreePoint(){

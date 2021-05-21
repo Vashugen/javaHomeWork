@@ -24,6 +24,21 @@ public enum SpellCollection {
         public ChainLighting action(){
             return new ChainLighting("Цепная молния");
         }
+    },
+    FIRE_TOUCH {
+        public FireTouch action(){
+            return new FireTouch("Огненное касание");
+        }
+    },
+    MIGRAINE {
+        public Migraine action(){
+            return new Migraine("Мигрень");
+        }
+    },
+    MONSTER_EXPELL {
+        public MonsterExpell action(){
+            return new MonsterExpell("Изгнание монстров");
+        }
     }
     ;
 

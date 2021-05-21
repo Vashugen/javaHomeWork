@@ -1,5 +1,6 @@
 package com.orion.lesson4.character;
 
+import com.orion.lesson4.spell.Healing;
 import com.orion.lesson4.spell.Spell;
 import com.orion.lesson4.spell.SpellCollection;
 
@@ -17,11 +18,19 @@ public class Mage extends Charm {
     }
 
     public void setDamage(int damage) {
-        this.setHitPoint(damage);
+        this.setHitPoint(this.getHitPoint() - damage);
 
     }
 
-    public void getDamage(Charm[] targets) {
+    public void action(Charm[] targets) {
+
+        if(this.getHitPoint() > 0){
+
+            Spell spell = getRandomSpell();
+            System.out.println("Маг " + this .getName() +  " читает заклинание " + spell.getName());
+
+            spell.cast(this, targets);
+        }
 
     }
 
@@ -40,6 +49,10 @@ public class Mage extends Charm {
             spellCount = spells.isEmpty() ? 0 : rand.nextInt(spells.size());
             spellBook.add(spells.remove(spellCount).action());
         }
+    }
+
+    private Spell getRandomSpell(){
+        return spellBook.get(rand.nextInt(spellBook.size()));
     }
 
 }

@@ -34,7 +34,7 @@ abstract public class Charm {
 
     public abstract void setDamage(int damage);
 
-    public abstract void getDamage(Charm[] targets);
+    public abstract void action(Charm[] targets);
 
 
 }

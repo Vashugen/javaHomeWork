@@ -1,8 +1,9 @@
 package com.orion.lesson4.spell;
 
-abstract public class Spell {
+import com.orion.lesson4.character.Charm;
 
-    //TODO type - заклинания могут быть не только на демаги - action вместо getDamage
+public class Spell {
+
     private String name;
     private int damage;
 
@@ -27,6 +28,13 @@ abstract public class Spell {
         return damage;
     }
 
-    abstract public void cast();
+    public void cast(Charm player, Charm[] targets){
+        System.out.println("Кастую рандомное заклинание");
+    };
+
+    public void getMessage(String targetName){
+        System.out.println(this.getName() + " ударяет по " + targetName);
+        System.out.println(targetName + " получает " + this.getDamage() + " урона.");
+    }
 
 }

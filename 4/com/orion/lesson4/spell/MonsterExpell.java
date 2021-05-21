@@ -1,12 +1,13 @@
 package com.orion.lesson4.spell;
 
 import com.orion.lesson4.character.Charm;
+import com.orion.lesson4.character.Monster;
 
-public class ChainLighting extends Spell{
+public class MonsterExpell extends Spell{
 
     private static int DAMAGE = 5;
 
-    public ChainLighting(String name) {
+    public MonsterExpell(String name) {
         super(name, DAMAGE);
     }
 
@@ -14,13 +15,11 @@ public class ChainLighting extends Spell{
     public void cast(Charm player, Charm[] targets) {
 
         for (Charm target: targets) {
-            if(target != null && !this.equals(target)){
-                this.getMessage(target.getName());
+            if(target != null && target instanceof Monster){
+                getMessage(target.getName());
                 target.setDamage(DAMAGE);
             }
         }
+
     }
-
-
-
 }

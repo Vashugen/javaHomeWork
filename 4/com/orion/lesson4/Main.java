@@ -17,7 +17,7 @@ public class Main {
 
     public static void showMenu() {
         System.out.println("Menu:" +
-                " 1. Нажмите 1, чтобы начать игру." +
+                " 1. Нажмите 1 для старта." +
                 " 2. Нажмите 0 для выхода. ");
     }
 
@@ -30,12 +30,11 @@ public class Main {
         do {
             showMenu();
             int choice = in.nextInt();
-            if(choice == 1){
-                Game.startTheGame();
-            }
+
             switch (choice) {
-                //case 1 -> Game.startTheGame();
-                //case 0 -> end = true;
+                case 1 -> Game.startTheGame();
+                case 0 -> end = true;
+                default -> System.out.println("Нет такого пункта меню, попробуйте снова");
             }
 
         }while (!end);

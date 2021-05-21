@@ -1,15 +1,15 @@
 package com.orion.lesson4;
 
 import com.orion.lesson4.character.Charm;
+import com.orion.lesson4.spell.Lighting;
 
-import java.util.Scanner;
+import javax.lang.model.type.ArrayType;
+import java.util.*;
 
 public class Game {
 
-    //TODO Модификаторы
     public static Scanner in = new Scanner(System.in);
     public static Scene scene;
-
 
     public static void startTheGame(){
 
@@ -21,39 +21,24 @@ public class Game {
 
         scene = new Scene(mageCount, monsterCount);
 
-        while(!isFinished()){
-            for (int i = 0; i < scene.SCENE_SIZE; i++){
+        System.out.println("Наблюдайте за игрой!");
 
+        while(!haveAWinner()){
+            for (int i = 0; i < scene.SCENE_SIZE; i++) {
                 if(scene.charms[i] != null){
-                    makeAMove(scene.charms[i], i);
+                    scene.charms[i].action(scene.charms);
                 }
             }
+
+            scene.clear();
         }
-
     }
 
-    private static void makeAMove(Charm charm, int position){
-        charm.getDamage(scene.charms);
-        //charm.damage(getTarget());
+    private static boolean haveAWinner(){
+
+        int nullElements = Collections.frequency(Arrays.asList(scene.charms), null);
+        return (scene.SCENE_SIZE - nullElements) == 1;
+
     }
-
-    /*private static Charm getTarget(){
-        int a = 1;
-
-        return
-    }*/
-
-    private static boolean isFinished(){
-
-        int counter = 0;
-        for (Charm item: scene.charms) {
-            if(item != null){
-                counter ++;
-            }
-        }
-
-        return counter == 1;
-    }
-
 
 }

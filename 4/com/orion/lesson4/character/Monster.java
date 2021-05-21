@@ -10,19 +10,22 @@ public class Monster extends Charm {
     }
 
     public void setDamage(int damage) {
-        //return getDamage();
+        this.setHitPoint(this.getHitPoint() - damage);
     }
 
     @Override
-    public void getDamage() {
+    public void action(Charm[] targets) {
 
-        int damage = rand.nextInt(DAMAGE);
+        if(this.getHitPoint() > 0){
 
-        for (Charm target: targets) {
-            if(target != null && !this.equals(target)){
-                System.out.println("Монстр" + this.getName() + " атакует " + target.getName() + " на " + damage + " единиц " +
-                        "урона");
-                target.setDamage(damage);
+            int damage = rand.nextInt(DAMAGE);
+
+            for (Charm target: targets) {
+                if(target != null && !this.equals(target)){
+                    System.out.println("Монстр" + this.getName() + " атакует " + target.getName() + " на " + damage + " единиц " +
+                            "урона");
+                    target.setDamage(damage);
+                }
             }
         }
     }
