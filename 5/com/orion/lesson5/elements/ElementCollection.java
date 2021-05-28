@@ -1,32 +1,27 @@
-//TODO как сгенерироваь класс "на лету"
-/*
 package com.orion.lesson5.elements;
+
+import java.util.Map;
 
 public enum ElementCollection {
 
     BUTTON {
-        public Class<Element> getClassName(){
-            return Button::getButtonClass();
+        public Element getData(Map params){
+            return new Button();
         }
-        Class<?> clazz = Class.forName("com.foo.MyClass");
     },
 
     CHECK_BOS {
-        public Class<Button> getClassName () {
-            return CheckBox::getClass();
+        public Element getClassName (Map params) {
+            return new CheckBox();
         }
     },
 
     TEXT_FIELD {
-        public Class<T> getClassName () {
-            return toString(TextField::getClass());
+        public Element getClassName (Map params) {
+            return new TextField();
         }
     };
 
-    public abstract Class<Element> getClassName();
+    public abstract Element getClassName(Map params);
 
 }
-
-    Class<?> clazz = Class.forName("com.foo.MyClass");
-    Constructor<?> constructor = clazz.getConstructor(String.class, Integer.class);
-    Object instance = constructor.newInstance("stringparam", 42);*/

@@ -6,11 +6,12 @@ import com.orion.lesson5.elements.TextField;
 import com.orion.lesson5.elements.interfaces.ButtonClickCallback;
 import com.orion.lesson5.exceptions.OutOfRangeException;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 public class Main {
 
-    public static void main(String[] args) throws OutOfRangeException {
+    public static void main(String[] args) throws OutOfRangeException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 
         Random rand = new Random();
         UI scene = new UI();
@@ -19,6 +20,8 @@ public class Main {
         Button addElementButton = new Button(rand.nextInt(100), rand.nextInt(100), 10, 20, "Добавить элемент", false, new AddElementOnClick(scene));
         TextField coordX = new TextField(rand.nextInt(100), rand.nextInt(100), 10, 20, "Координата x для нового элемента", false);
         TextField coordY = new TextField(rand.nextInt(100), rand.nextInt(100), 10, 20, "Координата y для нового элемента", false);
+
+
 
 
         System.out.println("Добавляем элементы на \"сцену\": ");

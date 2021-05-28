@@ -50,6 +50,14 @@ public abstract class Element {
         this.weight = weight;
     }
 
+    public String getCaption() {
+        return caption;
+    }
+
+    public void setCaption(String caption) {
+        this.caption = caption;
+    }
+
     public boolean isState() {
         return state;
     }

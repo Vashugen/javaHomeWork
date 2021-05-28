@@ -19,24 +19,27 @@ public class UI {
     }
 
     public void addElement(Element element) throws OutOfRangeException {
-        if(!allowToAdd(element.getX(), element.getY())) {
-            throw new OutOfRangeException(element);
+
+        Element existsElement = allowToAdd(element.getX(), element.getY());
+
+        if(existsElement != null) {
+            throw new OutOfRangeException(element, existsElement);
         }
 
         this.elementList.add(element);
 
     }
 
-    private boolean allowToAdd(int x, int y){
+    private Element allowToAdd(int x, int y){
 
         //TODO in callback + in 1 string
         for (Element item: elementList){
             if(item.getX() == x && item.getY() == y){
-                return false;
+                return item;
             }
         }
 
-        return true;
+        return null;
 
     }
 
