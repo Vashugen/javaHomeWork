@@ -6,6 +6,6 @@ import java.lang.reflect.InvocationTargetException;
 
 public interface ButtonClickCallback {
 
-    void onButtonClick() throws OutOfRangeException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException;
+    void onButtonClick();
 
 }

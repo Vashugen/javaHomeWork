@@ -17,19 +17,16 @@ public class Main {
         UI scene = new UI();
 
         System.out.println("Генерируем элементы: ");
-        Button addElementButton = new Button(rand.nextInt(100), rand.nextInt(100), 10, 20, "Добавить элемент", false, new AddElementOnClick(scene));
-        TextField coordX = new TextField(rand.nextInt(100), rand.nextInt(100), 10, 20, "Координата x для нового элемента", false);
-        TextField coordY = new TextField(rand.nextInt(100), rand.nextInt(100), 10, 20, "Координата y для нового элемента", false);
-
-
-
+        Button addElementButton = new Button(rand.nextInt(scene.MAX_X), rand.nextInt(scene.MAX_Y), rand.nextInt(scene.MAX_HEIGHT), rand.nextInt(scene.MAX_WEIGHT), "Добавить элемент", false, new AddElementOnClick(scene));
+        TextField coordX = new TextField(rand.nextInt(scene.MAX_X), rand.nextInt(scene.MAX_Y), rand.nextInt(scene.MAX_HEIGHT), rand.nextInt(scene.MAX_WEIGHT), "Координата x для нового элемента", false);
+        TextField coordY = new TextField(rand.nextInt(scene.MAX_X), rand.nextInt(scene.MAX_Y), rand.nextInt(scene.MAX_HEIGHT), rand.nextInt(scene.MAX_WEIGHT), "Координата y для нового элемента", false);
 
         System.out.println("Добавляем элементы на \"сцену\": ");
-
         scene.addElement(addElementButton);
         scene.addElement(coordX);
         scene.addElement(coordY);
 
+        System.out.println("Начинаем работу с элементами: ");
         addElementButton.click();
 
 

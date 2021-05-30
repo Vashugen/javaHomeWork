@@ -7,10 +7,8 @@ import com.orion.lesson5.elements.ElementCollection;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Random;
+import java.rmi.MarshalException;
+import java.util.*;
 
 public class AddElementOnClick implements ButtonClickCallback {
 
@@ -28,55 +26,48 @@ public class AddElementOnClick implements ButtonClickCallback {
 
     }
 
-    private Element generateRandomElement() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    private Element generateRandomElement() {
 
-        Map<String, String> paramsList = generateRandomParams();
+        Map<String, Integer> paramsList = generateRandomParams();
 
         //in function()
-        int x = rand.nextInt(100);
-        int y = rand.nextInt(100);
-        int height = rand.nextInt(100);
-        int weight = rand.nextInt(100);
+        int x = rand.nextInt(scene.MAX_X);
+        int y = rand.nextInt(scene.MAX_Y);
+        int height = rand.nextInt(scene.MAX_HEIGHT);
+        int weight = rand.nextInt(scene.MAX_WEIGHT);
         String caption = "Случайный элемент";
         boolean state = rand.nextBoolean();
 
         //TODO почему тут не видно enum ElementCollection
-        ArrayList<ElementCollection> elementList = new ArrayList<ElementCollection>(Arrays.asList(ElementCollection.values()));
+        //ArrayList<ElementCollection> elementList = new ArrayList<ElementCollection>(Arrays.asList(ElementCollection.values()));
 
-        Element randomClass = elementList.get(rand.nextInt(2)).getData(paramsList);
-
-        try{
-
-            Class<?> randomClass = Class.forName(elementList.get().getClassName());
-
-            try {
-                Constructor<?> constructor = randomClass.getConstructor(String.class, Integer.class);
-                Object instance = constructor.newInstance(x, y, height, weight, caption, state);
-            }catch(NoSuchMethodException e){
-                e.getStackTrace();
-            };
-
-        }catch (ClassNotFoundException e){
-            e.getStackTrace();
-        };
+        //Element randomClass = elementList.get(rand.nextInt(2)).getElement(paramsList, "Случайный элемент", scene);
 
         //размер enum'a
         switch (rand.nextInt(3)){
 
             case 0:
-                return new Button(x, y, height, weight, caption, state, new AddElementOnClick(scene));
+                return new Button(x, y, height, weight, "Кнопка в <x, y>", new ShowCoordinates(x, y));
             case 1:
-                return new TextField(rand.nextInt(100), rand.nextInt(100), 10, 20, "Координата x для нового элемента", false);
+                return new TextField(x, y, height, weight, caption, state);
             case 2:
-                return new CheckBox(rand.nextInt(100), rand.nextInt(100), 10, 20, "Координата x для нового элемента", false);
+                return new CheckBox(x, y, height, weight, caption, state);
+            default:
+                throw new IllegalStateException("Unexpected value: " + rand.nextInt(3));
         }
-
-        return  new Button(rand.nextInt(100), rand.nextInt(100), 10, 20, "Случайный элемент", false, new AddElementOnClick(scene));
     }
 
-    private Map<String, String> generateRandomParams(){
+    private Map<String, Integer> generateRandomParams(){
 
-        return Map
+        Map <String, Integer> paramsList = new HashMap<String, Integer>();
+
+        paramsList.put("x", rand.nextInt(scene.MAX_X));
+        paramsList.put("y", rand.nextInt(scene.MAX_Y));
+        paramsList.put("weight", rand.nextInt(100));
+        paramsList.put("height", rand.nextInt(100));
+
+        return paramsList;
+
 
     }
 }
