@@ -27,7 +27,7 @@ public class AddElementOnClick implements ButtonClickCallback {
 
     private Element generateRandomElement() {
 
-        Map<String, Integer> paramsList = generateRandomParams();
+       // Map<String, Integer> paramsList = generateRandomParams();
 
         //in function()
         int x = rand.nextInt(scene.MAX_X);

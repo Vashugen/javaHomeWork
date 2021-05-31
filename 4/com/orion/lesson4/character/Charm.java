@@ -1,5 +1,6 @@
 package com.orion.lesson4.character;
 
+import java.util.Map;
 import java.util.Random;
 
 abstract public class Charm {
@@ -32,7 +33,7 @@ abstract public class Charm {
 
     public abstract void setDamage(int damage);
 
-    public abstract void action(Charm[] targets);
+    public abstract void action(Map<Integer, Charm> targets);
 
 
 }

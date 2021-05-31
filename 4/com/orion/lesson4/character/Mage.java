@@ -22,15 +22,15 @@ public class Mage extends Charm {
 
     }
 
-    public void action(Charm[] targets) {
+    public void action(Map<Integer, Charm> targets) {
 
-        if(this.getHitPoint() > 0){
+/*        if(this.getHitPoint() > 0){
 
             Spell spell = getRandomSpell();
             System.out.println(this .getName() +  " читает заклинание " + spell.getName());
 
             spell.cast(this, targets);
-        }
+        }*/
 
     }
 

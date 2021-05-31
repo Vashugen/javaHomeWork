@@ -1,12 +1,12 @@
 package com.orion.lesson4.spell;
 
-
 import java.util.ArrayList;
 
 public enum SpellCollection {
 
     HEALING {
         public Healing action() {
+
             return new Healing("Лечение");
         }
     },
@@ -43,6 +43,5 @@ public enum SpellCollection {
     ;
 
     public abstract Spell action();
-
 
 }

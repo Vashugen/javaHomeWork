@@ -28,7 +28,7 @@ public class Main {
         scene.addElement(addElementButton);
         scene.addElement(coordX);
         scene.addElement(coordY);
-
+        //TODO its ok from here
         System.out.println("Тестируем работу с элементами: ");
         coordX.setText(Integer.toString(rand.nextInt(scene.MAX_X)));
         coordY.setText(Integer.toString(rand.nextInt(scene.MAX_Y)));
@@ -45,7 +45,7 @@ public class Main {
         for (Element element : scene.getAllElements()) {
             element.getDescription();
 
-            if (element instanceof Clickable) {
+            if (element instanceof Clickable && !element.isState()) {
                 ((Clickable) element).click();
             } else {
                 ((TextField) element).getText();

@@ -3,10 +3,8 @@ package com.orion.lesson5.elements;
 import com.orion.lesson5.elements.interfaces.ButtonClickCallback;
 import com.orion.lesson5.elements.interfaces.Clickable;
 import com.orion.lesson5.exceptions.OutOfRangeException;
+import com.orion.lesson5.exceptions.ReadOnlyException;
 
-import java.lang.reflect.InvocationTargetException;
-
-//public class Button extends Rectangle implements {
 public class Button extends Element implements Clickable {
 
     private ButtonClickCallback callback;
@@ -17,8 +15,13 @@ public class Button extends Element implements Clickable {
     }
 
     @Override
-    public void click() throws OutOfRangeException {
+    public void click() throws OutOfRangeException, ReadOnlyException {
 
+        if(!this.isState()){
+            throw new ReadOnlyException(this);
+        }
+
+        this.setState(!this.isState());
         callback.onButtonClick();
     }
 

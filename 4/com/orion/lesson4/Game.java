@@ -23,16 +23,27 @@ public class Game {
 
         System.out.println("Наблюдайте за игрой!");
 
-        while (!haveAWinner()) {
+        while(scene.charms.size() > 1){
+            scene.charms.forEach((k, v) -> v.action(scene.charms));
+            scene.charms.forEach((k, v) -> {
+                if(v.getHitPoint() <= 0){
+                    scene.charms.remove(k);
+                }
+            });
+        }
+
+
+
+        /*while (!haveAWinner()) {
             for (int i = 0; i < scene.SCENE_SIZE; i++) {
                 if (scene.charms[i] != null) {
                     scene.charms[i].action(scene.charms);
                 }
             }
             scene.clear();
-        }
+        }*/
 
-        getTheWinner();
+        //getTheWinner();
     }
 
     private static boolean haveAWinner() {
@@ -42,13 +53,13 @@ public class Game {
 
     }
 
-    private static void getTheWinner() {
+/*    private static void getTheWinner() {
 
         Arrays.asList(scene.charms).forEach(item -> {
             if (item != null) {
                 System.out.println("\nВ игре побеждает " + item.getName() + "!!\n");
             }
         });
-    }
+    }*/
 
 }
