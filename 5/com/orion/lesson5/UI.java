@@ -8,39 +8,30 @@ import java.util.List;
 
 public class UI {
 
-    //TODO rename, this is coords
     public static int MAX_X = 100;
     public static int MAX_Y = 100;
-
     public static List<Element> elementList = new ArrayList<>();
 
     public List<Element> getAllElements(){
-        return this.elementList;
+        return elementList;
     }
 
     public void addElement(Element element) throws OutOfRangeException {
 
-        Element existsElement = allowToAdd(element.getX(), element.getY());
-
-        if(existsElement != null) {
-            throw new OutOfRangeException(element, existsElement);
+        if(checkCoords(element)) {
+            elementList.add(element);
         }
-
-        this.elementList.add(element);
-
     }
 
-    private Element allowToAdd(int x, int y){
+    private boolean checkCoords(Element element) throws OutOfRangeException {
 
-        //TODO in callback + in 1 string
         for (Element item: elementList){
-            if(item.getX() == x && item.getY() == y){
-                return item;
+            if(item.getX() == element.getX() && item.getY() == element.getY()){
+                throw new OutOfRangeException(element, item);
             }
         }
 
-        return null;
-
+        return true;
     }
 
 }
