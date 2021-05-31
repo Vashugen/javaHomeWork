@@ -8,6 +8,7 @@ import com.orion.lesson5.elements.interfaces.Clickable;
 import com.orion.lesson5.exceptions.OutOfRangeException;
 import com.orion.lesson5.exceptions.ReadOnlyException;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -29,19 +30,20 @@ public class Main {
         scene.addElement(coordX);
         scene.addElement(coordY);
         //TODO its ok from here
-        System.out.println("Тестируем работу с элементами: ");
+        System.out.println("Тестируем работу с элементами.");
         coordX.setText(Integer.toString(rand.nextInt(scene.MAX_X)));
         coordY.setText(Integer.toString(rand.nextInt(scene.MAX_Y)));
         addElementButton.click();
+        System.out.println("Тестирование прошло успешно.");
 
-        System.out.println("Запускаем работу с элементами: ");
+        System.out.println("Запускаем работу с элементами ");
         for (int i = 0; i < 10; i++) {
             coordX.setText(Integer.toString(rand.nextInt(scene.MAX_X)));
             coordY.setText(Integer.toString(rand.nextInt(scene.MAX_Y)));
             addElementButton.click();
         }
 
-        System.out.println("Выводим созданные элементы: ");
+        System.out.println(" и выводим созданные элементы: ");
         for (Element element : scene.getAllElements()) {
             element.getDescription();
 

@@ -35,7 +35,7 @@ public class AddElementOnClick implements ButtonClickCallback {
         int height = rand.nextInt(Element.MAX_HEIGHT);
         int weight = rand.nextInt(Element.MAX_WEIGHT);
         String caption = "Случайный элемент";
-        boolean state = rand.nextBoolean();
+        boolean state = false;
 
         //TODO почему тут не видно enum ElementCollection
         //ArrayList<ElementCollection> elementList = new ArrayList<ElementCollection>(Arrays.asList(ElementCollection.values()));
