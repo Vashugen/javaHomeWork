@@ -17,7 +17,7 @@ public class Button extends Element implements Clickable {
     @Override
     public void click() throws OutOfRangeException, ReadOnlyException {
 
-        if(!this.isState()){
+        if(this.isState()){
             throw new ReadOnlyException(this);
         }
 

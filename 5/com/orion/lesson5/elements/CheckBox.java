@@ -12,7 +12,7 @@ public class CheckBox extends Element implements Clickable {
     @Override
     public void click() throws ReadOnlyException {
 
-        if(!this.isState()){
+        if(this.isState()){
             throw new ReadOnlyException(this);
         }
 
