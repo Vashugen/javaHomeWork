@@ -7,5 +7,5 @@ import java.lang.reflect.InvocationTargetException;
 
 public interface Clickable {
 
-    void click() throws ReadOnlyException, OutOfRangeException, ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException;
+    void click() throws OutOfRangeException, ReadOnlyException;
 }

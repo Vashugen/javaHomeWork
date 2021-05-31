@@ -2,6 +2,9 @@ package com.orion.lesson5.elements;
 
 public abstract class Element {
 
+    public static int MAX_WEIGHT = 100;
+    public static int MAX_HEIGHT = 100;
+
     private int x;
     private int y;
     private int height;
@@ -65,4 +68,8 @@ public abstract class Element {
     public void setState(boolean state) {
         this.state = state;
     }
+
+    public void getDescription(){
+        System.out.println(this.getClass());
+    };
 }

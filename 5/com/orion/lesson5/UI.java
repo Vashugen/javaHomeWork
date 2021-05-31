@@ -11,8 +11,6 @@ public class UI {
     //TODO rename, this is coords
     public static int MAX_X = 100;
     public static int MAX_Y = 100;
-    public static int MAX_WEIGHT = 100;
-    public static int MAX_HEIGHT = 100;
 
     public static List<Element> elementList = new ArrayList<>();
 

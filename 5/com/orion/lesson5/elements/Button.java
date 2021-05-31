@@ -17,7 +17,7 @@ public class Button extends Element implements Clickable {
     }
 
     @Override
-    public void click() throws OutOfRangeException, ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
+    public void click() throws OutOfRangeException {
 
         callback.onButtonClick();
     }

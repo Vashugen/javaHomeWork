@@ -2,9 +2,18 @@ package com.orion.lesson5.elements;
 
 public class TextField extends Element {
 
-    public TextField(int x, int y, int height, int weight, String caption, boolean state) {
-        super(x, y, height, weight, caption, state);
+    private String text;
+
+    public TextField(int x, int y, int height, int weight, String caption, boolean state, String text) {
+        super(x, y, height, weight, caption, true);
+        this.text = text;
     }
 
-    //TODO у поля есть состояние - введённый текст
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 }

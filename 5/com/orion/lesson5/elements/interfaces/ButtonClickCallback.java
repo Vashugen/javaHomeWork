@@ -6,6 +6,6 @@ import java.lang.reflect.InvocationTargetException;
 
 public interface ButtonClickCallback {
 
-    void onButtonClick();
+    void onButtonClick() throws OutOfRangeException;
 
 }
