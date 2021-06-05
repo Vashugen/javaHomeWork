@@ -14,9 +14,6 @@ public class TaskB {
             new GasStation ("Минина, 1", GasStation.GasolineType.AI92, 94.00)
     );
 
-    List<Triple<String, GasStation.GasolineType, Double>> gasStationList = new ArrayList<Triple<String,GasStation.GasolineType, Double>>(gasStations.forEach(e -> ););
-
-
 
     List<Triple<String,Integer,Double>> mobileAppList = List.of(
             new Triple<String,Integer,Double>("ShmugenGames", 5000, 5.0),
@@ -25,10 +22,25 @@ public class TaskB {
             new Triple<String,Integer,Double>("ShmugenGames", 127000, 4.0)
     );
 
-    public static void findBestPrice(GasStation.GasolineType type){
+    List<Triple<String, GasStation.GasolineType, Double>> gasStationList = new ArrayList<Triple<String,GasStation.GasolineType, Double>>();
+
+    public TaskB() {
+
+        gasStations.forEach(e -> {
+            gasStationList.add(new Triple<String, GasStation.GasolineType, Double>(e.getAddress(), e.getGasolineType(), e.getPrice()));
+        });
+
+    }
+
+    public static void findBestGasPrice(GasStation.GasolineType type){
 
         this.gasStationList.forEach();
         //System.out.println(this.gasStationList);
+
+    }
+
+    public static void main(String[] args) {
+
 
     }
 }
