@@ -10,7 +10,7 @@ public class Mage extends Charm {
 
     private static final int MAX_SPELL_COUNT = 2;
     private static final int HITPOINT = 4;
-    private ArrayList<Spell> spellBook = new ArrayList<>();
+    private ArrayList<Spell> spellBook = new ArrayList<Spell>();
 
     public Mage(String name) {
         super("Маг №" + name, HITPOINT);
