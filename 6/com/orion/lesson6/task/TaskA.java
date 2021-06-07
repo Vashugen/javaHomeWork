@@ -25,10 +25,10 @@ public class TaskA implements Task {
 
     @Override
     public void actionTask(){
-        //ds
+        feedAnimals();
     }
 
-    public void feedAnimals() {
+    private void feedAnimals() {
 
         int rand = new Random().nextInt(this.dataList.size());
 

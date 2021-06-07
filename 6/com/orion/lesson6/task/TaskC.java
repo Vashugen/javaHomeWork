@@ -30,4 +30,6 @@ public class TaskC implements Task{
         System.out.println("Приложение с самым худшим рейтингом");
     }
 
+    //private sortData(List<>)
+
 }

@@ -2,7 +2,10 @@ package com.orion.lesson6.task;
 
 import com.orion.lesson6.tuple.Triple;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class TaskB implements Task{
 
@@ -43,13 +46,17 @@ public class TaskB implements Task{
     @Override
     public void actionTask() {
 
+        GasolineType randomType = new ArrayList<GasolineType>(Arrays.asList(GasolineType.values())).get(new Random().nextInt(GasolineType.values().length));
+        findBestGasPrice(randomType);
+
     }
 
 
     public static void findBestGasPrice(GasolineType type) {
 
-
         //use iterator?
+        System.out.println("Наиболее выгодная цена для %s находится по адресу %s");
+        System.out.println("Данных по искомому типу бензина нет");
 
     }
 
