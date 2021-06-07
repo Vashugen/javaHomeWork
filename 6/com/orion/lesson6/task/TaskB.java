@@ -2,14 +2,11 @@ package com.orion.lesson6.task;
 
 import com.orion.lesson6.tuple.Triple;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-public class TaskB implements Task{
+public class TaskB implements Task {
 
-    public List<Triple<String, GasolineType, Double>> dataList;
+    public static List<Triple<String, GasolineType, Double>> dataList;
 
     public static enum GasolineType {
         DT("ДТ"),
@@ -52,11 +49,14 @@ public class TaskB implements Task{
     }
 
 
-    public static void findBestGasPrice(GasolineType type) {
+    private static void findBestGasPrice(GasolineType type) {
 
-        //use iterator?
-        System.out.println("Наиболее выгодная цена для %s находится по адресу %s");
-        System.out.println("Данных по искомому типу бензина нет");
+        Optional<Triple<String, GasolineType, Double>> optional = dataList.stream().filter(e -> e.getSecond().equals(type)).min(Comparator.comparing(Triple::getThird));
+        if(optional != null){
+            System.out.println(String.format("Наиболее выгодная цена для %s находится по адресу %s", type, optional.get().getFirst()));
+        }else{
+            System.out.println("Данных по искомому типу бензина нет");
+        }
 
     }
 

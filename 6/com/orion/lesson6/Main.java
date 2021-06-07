@@ -1,6 +1,5 @@
 package com.orion.lesson6;
 
-
 import com.orion.lesson6.task.Task;
 import com.orion.lesson6.task.TaskA;
 import com.orion.lesson6.task.TaskB;
