@@ -6,7 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/3/com.orion.lesson3" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/4/com.orion.lesson4" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/6" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
