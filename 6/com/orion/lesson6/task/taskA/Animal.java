@@ -1,4 +1,4 @@
-package com.orion.lesson6.taskA;
+package com.orion.lesson6.task.taskA;
 
 public class Animal {
 
