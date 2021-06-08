@@ -18,14 +18,17 @@ public class Main {
 
     public static void prepareSteps(Task task){
 
-        System.out.println("Генерируем среду для .");
+        System.out.println("~~~~~~~~~~~~~~~~~//~~~~~~~~~~~~~~~~~");
+
+        System.out.println("Генерируем среду для " + task.getClass().getSimpleName());
         task.initData();
 
-        System.out.println("Выводим исходные данные:");
+        System.out.println("\nВыводим исходные данные:");
         task.printData();
 
-        System.out.println("Выполняем задание:");
+        System.out.println("\nВыполняем задание:");
         task.actionTask();
     }
 
 }
+

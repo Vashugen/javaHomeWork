@@ -1,10 +1,15 @@
 package com.orion.lesson6.task;
 
+import com.orion.lesson6.tuple.Pair;
 import com.orion.lesson6.tuple.Triple;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
-public class TaskC implements Task{
+public class TaskC implements Task {
 
     public List<Triple<String, Integer, Double>> mobileList;
 
@@ -25,15 +30,30 @@ public class TaskC implements Task{
 
     @Override
     public void actionTask() {
+
         System.out.println("Сортировка приложений по колву оценок");
-        System.out.println("Приложение с самым лучшим рейтингом");
-        System.out.println("Приложение с самым худшим рейтингом");
+        sortByCountData();
+        sortByMaxData();
+        sortByMinData();
     }
 
-/*
-    private sortData(){
-        //Optional<Integer> min = numbers.stream().min(Integer::compare);
+
+    private void sortByCountData(){
+        //getThird же не static, почему вызвался?
+        System.out.println("get first" + mobileList.stream().sorted());
+        mobileList = mobileList.stream()
+                .sorted(Comparator.comparing(Triple::getThird))
+                .collect(Collectors.toList());
+
+        printData();
     }
-*/
+
+    private void sortByMaxData(){
+        System.out.println(String.format("Приложение с лучшим рейтингом: %s", mobileList.stream().max(Comparator.comparing(Triple::getThird)).get().getFirst()));
+    }
+
+    private void sortByMinData(){
+        System.out.println(String.format("Приложение с худшим рейтингом: %s", mobileList.stream().min(Comparator.comparing(Triple::getThird)).get().getFirst()));
+    }
 
 }

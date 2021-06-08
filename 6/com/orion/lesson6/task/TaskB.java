@@ -48,7 +48,6 @@ public class TaskB implements Task {
 
     }
 
-
     private static void findBestGasPrice(GasolineType type) {
 
         Optional<Triple<String, GasolineType, Double>> optional = dataList.stream().filter(e -> e.getSecond().equals(type)).min(Comparator.comparing(Triple::getThird));
