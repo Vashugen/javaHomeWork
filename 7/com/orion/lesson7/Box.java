@@ -2,16 +2,16 @@ package com.orion.lesson7;
 
 public class Box <T> {
 
-    private T box;
+    private T content;
 
-    public Box(T box) {
-        if(box == null){
+    public Box(T content) {
+        if(content == null){
             throw new NullPointerException("Box can't be null");
         }
-        this.box = box;
+        this.content = content;
     }
 
     public T getBox() {
-        return box;
+        return content;
     }
 }
