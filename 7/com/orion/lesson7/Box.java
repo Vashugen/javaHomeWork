@@ -11,7 +11,7 @@ public class Box <T> {
         this.content = content;
     }
 
-    public T getBox() {
+    public T getContent() {
         return content;
     }
 }

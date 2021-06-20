@@ -1,5 +1,7 @@
 package com.orion.lesson7;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
@@ -13,10 +15,17 @@ public class Main {
         NumberBox boxC = new NumberBox(rand.nextInt(10));
 
 
-        //System.out.println("Сложим содержимое коробочек: " + boxB.add(boxA));
+        System.out.println("Сложим содержимое коробочек: " + boxC.add(boxA).getContent());
         System.out.println("100 * 10 = : " + boxC.multiply(boxA));
         System.out.println("100 + 10 * 10 = : " + boxC.multiply(boxA));
 
+     /*   List<CharSequence> emptyList = new ArrayList<>();
 
+
+        List<CharSequence> emptyList = new ArrayList<>();
+        copyNonEmptyStringBoxToList(Box<String>.of("    "), emptyList); // пустая строка не должна добавиться
+        copyNonEmptyStringBoxToList(Box<String>.of("сорок два"), emptyList); // теперь внутри emptyList лежит "сорок два"
+        copyNonEmptyStringBoxToList(Box<StringBuilder>.of(new StringBuilder("some value ")), emptyList); // теперь внутри emptyList лежит "сорок два" и "some value"
+*/
     }
 }
