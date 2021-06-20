@@ -15,9 +15,12 @@ public class Main {
         NumberBox boxC = new NumberBox(rand.nextInt(10));
 
 
+        System.out.println(String.format("Выводим содержимое коробок: " +
+                "boxA = %s, boxB = %s boxC = %s", boxA.getContent(), boxB.getContent(), boxC.getContent()));
+
         System.out.println("Сложим содержимое коробочек: " + boxC.add(boxA).getContent());
         System.out.println("100 * 10 = : " + boxC.multiply(boxA));
-        System.out.println("100 + 10 * 10 = : " + boxC.multiply(boxA));
+        System.out.println("100 + 10 * 10 = : " + boxC.multiply(boxA).add(boxB));
 
      /*   List<CharSequence> emptyList = new ArrayList<>();
 
